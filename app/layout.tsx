@@ -1,15 +1,17 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Inter, Manrope } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
+const manrope = Manrope({
+  variable: '--font-family',
+  subsets: ['latin', 'cyrillic'],
+  weight: ['400', '500', '600', '700'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+const inter = Inter({
+  variable: '--second-family',
+  subsets: ['latin', 'cyrillic'],
+  weight: ['500'],
 });
 
 export const metadata: Metadata = {
@@ -25,9 +27,9 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${manrope.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className='bg-white text-black dark:bg-black dark:text-white'>
+      <body className='bg-white text-black [font-family:var(--font-family)] dark:bg-black dark:text-white'>
         {children}
       </body>
     </html>

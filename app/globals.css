@@ -1,2 +1,156 @@
 @import 'tailwindcss';
 @import 'modern-normalize/modern-normalize.css';
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: currentColor;
+  border: 1px solid transparent;
+
+  display: block;
+  cursor: pointer;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Base */
+
+:root {
+  --main: #101828;
+  --gray: #8d929a;
+  --gray-light: #dadde1;
+  --badges: #f2f4f7;
+  --inputs: #f7f7f7;
+  --white: #fff;
+  --light-blue: #00aad4;
+  --bg: #f5f5f5;
+  --dark-blue: #0095ba;
+  --shadow-button: 0 8px 18px rgb(0 170 212 / 22%);
+  --shadow-button-hover: 0 12px 26px rgb(0 149 186 / 28%);
+  --shadow-button-active: 0 5px 12px rgb(16 24 40 / 18%);
+  --shadow-focus: 0 0 0 4px rgb(0 170 212 / 18%);
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background: var(--light-blue);
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--white);
+  font-family: var(--font-family);
+
+  border-radius: 12px;
+  padding: 12px 51px;
+  width: 156px;
+  height: 44px;
+  border: none;
+  box-shadow: var(--shadow-button);
+  transform: translateY(0);
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms ease;
+  will-change: transform;
+}
+
+button:hover,
+button:focus-visible {
+  background: var(--dark-blue);
+  box-shadow: var(--shadow-button-hover);
+  transform: translateY(-2px);
+}
+
+button:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+  box-shadow:
+    var(--shadow-button-hover),
+    var(--shadow-focus);
+}
+
+button:active {
+  background: var(--dark-blue);
+  color: var(--main);
+  border-color: var(--dark-blue);
+  box-shadow: var(--shadow-button-active);
+  transform: translateY(1px) scale(0.98);
+}
+
+button:disabled {
+  background: var(--gray);
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+}
+
+button:disabled:hover,
+button:disabled:focus-visible,
+button:disabled:active {
+  background: var(--gray);
+  color: var(--white);
+  border-color: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button {
+    transition: none;
+  }
+}
+
+/* Container */
