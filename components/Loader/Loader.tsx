@@ -11,11 +11,11 @@ const loaderStyles: Record<
 > = {
   page: {
     wrapper: 'flex min-h-64 items-center justify-center gap-3',
-    dot: 'size-4 bg-indigo-600',
+    dot: 'size-4 bg-(--dark-blue)',
   },
   inline: {
     wrapper: 'inline-flex items-center gap-2 align-middle',
-    dot: 'size-3 bg-indigo-600',
+    dot: 'size-3 bg-(--dark-blue)',
   },
   button: {
     wrapper: 'inline-flex items-center justify-center gap-1.5 align-middle',

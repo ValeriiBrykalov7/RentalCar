@@ -6,13 +6,19 @@ export interface Car {
   type: string;
   img: string;
   description: string;
-  fuelConsumption: string;
-  engineSize: string;
-  accessories: string[];
-  functionalities: string[];
+  fuelConsumption: number;
+  engine: string;
   rentalPrice: string;
   rentalCompany: string;
-  address: string;
   rentalConditions: string[];
   mileage: number;
+  stockNumber: number;
+  features: string[];
+  location: {
+    country: string;
+    city: string;
+    address: string;
+  };
+  createdAt: string;
+  updatedAt: string;
 }

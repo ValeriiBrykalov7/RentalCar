@@ -3,9 +3,11 @@ import { isAxiosError } from 'axios';
 import { api } from '../api';
 import { logErrorResponse } from '../_utils/utils';
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    const res = await api.get('/cars');
+    const { searchParams } = new URL(request.url);
+    const params = Object.fromEntries(searchParams.entries());
+    const res = await api.get('/cars', { params });
 
     return NextResponse.json(res.data, { status: res.status });
   } catch (error) {
