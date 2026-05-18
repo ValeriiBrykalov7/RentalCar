@@ -45,7 +45,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
   ];
 
   return (
-    <article className='w-[528px] text-(--main) bg-(--white) px-[24px] pt-[32px] pb-[4px] rounded-[16px]'>
+    <article className='w-[528px] min-h-[968px] text-(--main) bg-(--white) px-[24px] pt-[32px] pb-[4px] rounded-[16px]'>
       <div className='mb-[32px]'>
         <div className='mb-[8px] flex items-baseline gap-[16px] '>
           <h1 className='text-[24px] leading-[1.333] font-semibold'>

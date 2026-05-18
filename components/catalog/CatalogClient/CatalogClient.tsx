@@ -59,13 +59,13 @@ export default function CatalogClient() {
   return (
     <section>
       <div className='container'>
-        <div className='page-enter-item'>
+        <div className='page-enter-item relative z-30'>
           <SearchForm onSubmit={handleSearchSubmit} />
         </div>
 
         {!isGridLoading && cars.length > 0 && (
           <div
-            className={`page-enter-item page-enter-item-delay-1 ${
+            className={`page-enter-item page-enter-item-delay-1 relative z-0 ${
               shouldAddGridBottomSpacing ? 'pb-[124px]' : ''
             }`}
           >

@@ -98,7 +98,7 @@ const selectStyles: StylesConfig<SelectOption, false> = {
     backgroundColor: 'var(--white)',
     boxShadow: '0 4px 36px 0 rgba(0, 0, 0, 0.02)',
     overflow: 'hidden',
-    zIndex: 20,
+    zIndex: 100,
   }),
   menuList: (base) => ({
     ...base,
