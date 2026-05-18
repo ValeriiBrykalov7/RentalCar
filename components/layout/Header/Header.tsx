@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Logo from '../Logo/Logo';
+import Logo from '@/components/layout/Logo/Logo';
 
 const navLinks = [
   { href: '/', label: 'Home' },

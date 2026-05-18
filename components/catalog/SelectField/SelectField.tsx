@@ -7,7 +7,8 @@ import Select, {
   type StylesConfig,
 } from 'react-select';
 import { useField } from 'formik';
-import Icon from '@/components/Icon/Icon';
+import Icon from '@/components/shared/Icon/Icon';
+import { Loader } from '@/components/shared/Loader/Loader';
 
 export type SelectOption = {
   value: string;
@@ -25,7 +26,7 @@ type SelectFieldProps = {
 const selectStyles: StylesConfig<SelectOption, false> = {
   container: (base) => ({
     ...base,
-    width: 196,
+    width: 204,
   }),
   control: (base, state) => ({
     ...base,
@@ -143,6 +144,14 @@ const selectStyles: StylesConfig<SelectOption, false> = {
 };
 
 function DropdownIndicator(props: DropdownIndicatorProps<SelectOption, false>) {
+  if (props.selectProps.isLoading) {
+    return (
+      <components.DropdownIndicator {...props}>
+        <Loader variant='inline' />
+      </components.DropdownIndicator>
+    );
+  }
+
   return (
     <components.DropdownIndicator {...props}>
       <Icon
@@ -154,6 +163,10 @@ function DropdownIndicator(props: DropdownIndicatorProps<SelectOption, false>) {
       />
     </components.DropdownIndicator>
   );
+}
+
+function LoadingIndicator() {
+  return null;
 }
 
 export default function SelectField({
@@ -182,13 +195,14 @@ export default function SelectField({
         value={selectedOption}
         onChange={handleChange}
         onBlur={() => helpers.setTouched(true)}
-        placeholder={placeholder}
+        placeholder={isLoading ? '' : placeholder}
         isLoading={isLoading}
         isDisabled={isLoading}
         isSearchable={false}
         components={{
           DropdownIndicator,
           IndicatorSeparator: null,
+          LoadingIndicator,
         }}
         styles={selectStyles}
       />

@@ -7,7 +7,7 @@ import * as yup from 'yup';
 import { getCarFilters, type CarsQueryParams } from '@/lib/api/clientApi';
 import SelectField, {
   type SelectOption,
-} from '@/components/SelectField/SelectField';
+} from '@/components/catalog/SelectField/SelectField';
 
 type SearchFormValues = {
   brand: string;

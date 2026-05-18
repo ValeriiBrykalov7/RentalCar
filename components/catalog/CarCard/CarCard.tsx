@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Icon from '@/components/Icon/Icon';
+import Icon from '@/components/shared/Icon/Icon';
 import type { Car } from '@/types/car';
 
 type CarCardProps = {
@@ -29,7 +29,7 @@ const renderMetaItems = (items: string[]) =>
 
 export default function CarCard({ car }: CarCardProps) {
   const { city, country } = car.location;
-  const carTitle = `${car.brand} ${car.model}, ${car.year}`;
+
   const carMeta = [
     city,
     country,
@@ -40,13 +40,15 @@ export default function CarCard({ car }: CarCardProps) {
 
   return (
     <article className='flex h-full w-[276px] flex-col rounded-2xl bg-(--white) p-4'>
-      <Image
-        className='mb-[16px] min-h-[268px] w-full shrink-0 rounded-[14px] object-cover'
-        src={car.img}
-        alt={carTitle}
-        width={276}
-        height={268}
-      />
+      <div className='relative mb-[16px] h-[268px] w-full shrink-0 overflow-hidden rounded-[14px]'>
+        <Image
+          className='object-cover'
+          src={car.img}
+          alt={`${car.brand} ${car.model}, ${car.year}`}
+          fill
+          sizes='244px'
+        />
+      </div>
 
       <div className='mb-[8px] flex items-start justify-between gap-[12px]'>
         <h2 className='line-clamp-1 text-[16px] leading-tight font-medium text-(--main)'>

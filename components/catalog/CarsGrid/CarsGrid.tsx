@@ -1,4 +1,4 @@
-import CarCard from '@/components/CarCard/CarCard';
+import CarCard from '@/components/catalog/CarCard/CarCard';
 import type { Car } from '@/types/car';
 
 type CarsGridProps = {

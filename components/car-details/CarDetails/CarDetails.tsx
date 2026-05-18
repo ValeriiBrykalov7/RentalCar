@@ -1,4 +1,4 @@
-import Icon from '@/components/Icon/Icon';
+import Icon from '@/components/shared/Icon/Icon';
 import type { Car } from '@/types/car';
 
 type CarDetailsProps = {
@@ -45,13 +45,13 @@ export default function CarDetails({ car }: CarDetailsProps) {
   ];
 
   return (
-    <article className='w-[528px] text-(--main)'>
+    <article className='w-[528px] text-(--main) bg-(--white) px-[24px] pt-[32px] pb-[4px] rounded-[16px]'>
       <div className='mb-[32px]'>
-        <div className='mb-[8px] flex items-baseline gap-[16px]'>
-          <h1 className='text-[24px] leading-[1.333] font-bold'>
+        <div className='mb-[8px] flex items-baseline gap-[16px] '>
+          <h1 className='text-[24px] leading-[1.333] font-semibold'>
             {car.brand} {car.model}, {car.year}
           </h1>
-          <p className='text-base leading-[1.25] font-medium text-(--gray)'>
+          <p className='text-base leading-tight font-medium text-(--gray)'>
             Article: {car.stockNumber}
           </p>
         </div>
@@ -61,12 +61,12 @@ export default function CarDetails({ car }: CarDetailsProps) {
           {car.location.city}, {car.location.country}
         </p>
 
-        <p className='text-[24px] leading-[1.333] font-bold text-(--light-blue)'>
+        <p className='text-[24px] leading-[1.333] font-semibold text-(--light-blue)'>
           ${car.rentalPrice}
         </p>
       </div>
 
-      <p className='mb-[68px] text-base leading-[1.25] font-medium'>
+      <p className='mb-[24px] text-base font-medium leading-tight'>
         {car.description}
       </p>
 
