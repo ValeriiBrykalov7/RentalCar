@@ -4,10 +4,11 @@ import { useQuery } from '@tanstack/react-query';
 import { ErrorMessage, Field, Form, Formik, type FormikHelpers } from 'formik';
 import toast from 'react-hot-toast';
 import * as yup from 'yup';
-import { getCarFilters, type CarsQueryParams } from '@/lib/api/clientApi';
+import { getCarFilters } from '@/lib/api/clientApi';
 import SelectField, {
   type SelectOption,
 } from '@/components/catalog/SelectField/SelectField';
+import type { CarsQueryParams } from '@/types/carsResponse';
 
 type SearchFormValues = {
   brand: string;
@@ -172,7 +173,7 @@ export default function SearchForm({ onSubmit }: SearchFormProps) {
 
           <div className='relative flex flex-col items-center'>
             <button
-              className='button w-[156px] h-[44px]'
+              className='button w-[156px] h-[44px] font-semibold'
               type='submit'
               disabled={isSubmitting}
             >

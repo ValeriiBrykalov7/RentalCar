@@ -38,8 +38,7 @@ const validationSchema = yup.object({
   comment: yup
     .string()
     .trim()
-    .max(500, 'Comment must be 500 characters or less')
-    .required('Comment is required'),
+    .max(500, 'Comment must be 500 characters or less'),
 });
 
 const getFieldClassName = (hasError: boolean) =>
@@ -69,7 +68,9 @@ export default function BookCarForm({ carId }: BookCarFormProps) {
         bookingData: {
           name: values.name.trim(),
           email: values.email.trim(),
-          comment: values.comment.trim(),
+          ...(values.comment?.trim() && {
+            comment: values.comment.trim(),
+          }),
         },
         resetForm: helpers.resetForm,
       },
@@ -83,7 +84,7 @@ export default function BookCarForm({ carId }: BookCarFormProps) {
 
   return (
     <section className='rounded-2xl bg-(--white) px-[32px] py-[32px]'>
-      <h2 className='mb-[8px] text-xl leading-[1.2] font-semibold text-(--main)'>
+      <h2 className='mb-[8px] text-xl leading-[1.2] font-medium text-(--main)'>
         Book your car now
       </h2>
       <p className='mb-[24px] text-base leading-[1.25] font-medium text-(--gray)'>
@@ -153,7 +154,7 @@ export default function BookCarForm({ carId }: BookCarFormProps) {
               </ErrorMessage>
             </label>
 
-            <label className='relative mb-[8px] block'>
+            <label className='relative mb-[4px] block'>
               <Field
                 as='textarea'
                 className={`${getFieldClassName(
@@ -172,7 +173,9 @@ export default function BookCarForm({ carId }: BookCarFormProps) {
               type='submit'
               disabled={isSubmitting || bookingMutation.isPending}
             >
-              {isSubmitting || bookingMutation.isPending ? 'Sending...' : 'Send'}
+              {isSubmitting || bookingMutation.isPending
+                ? 'Sending...'
+                : 'Send'}
             </button>
           </Form>
         )}

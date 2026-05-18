@@ -5,11 +5,12 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import CarsGrid from '@/components/catalog/CarsGrid/CarsGrid';
 import { Loader } from '@/components/shared/Loader/Loader';
 import SearchForm from '@/components/catalog/SearchForm/SearchForm';
-import { getAllCars, type CarsQueryParams } from '@/lib/api/clientApi';
+import { getAllCars } from '@/lib/api/clientApi';
 import {
   CATALOG_PER_PAGE,
   CATALOG_QUERY_STALE_TIME,
 } from '@/lib/constants/catalog';
+import type { CarsQueryParams } from '@/types/carsResponse';
 
 export default function CatalogClient() {
   const [filters, setFilters] = useState<CarsQueryParams>({});
