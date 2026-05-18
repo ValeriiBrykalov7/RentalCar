@@ -51,7 +51,7 @@ export default function CarCard({ car }: CarCardProps) {
       </div>
 
       <div className='mb-[8px] flex items-start justify-between gap-[12px]'>
-        <h2 className='line-clamp-1 text-[16px] leading-tight font-medium text-(--main)'>
+        <h2 className=' text-[16px] leading-tight font-medium text-(--main)'>
           {car.brand} <span className='text-(--light-blue)'>{car.model}</span>,{' '}
           {car.year}
         </h2>
