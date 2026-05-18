@@ -185,8 +185,13 @@ export default function SelectField({
   };
 
   return (
-    <label className='flex flex-col gap-[8px] text-xs leading-[1.333] font-medium text-(--gray)'>
-      {label}
+    <div className='flex flex-col gap-[8px]'>
+      <label
+        className='text-xs leading-[1.333] font-medium text-(--gray)'
+        htmlFor={name}
+      >
+        {label}
+      </label>
       <Select<SelectOption, false>
         instanceId={name}
         inputId={name}
@@ -206,6 +211,6 @@ export default function SelectField({
         }}
         styles={selectStyles}
       />
-    </label>
+    </div>
   );
 }
