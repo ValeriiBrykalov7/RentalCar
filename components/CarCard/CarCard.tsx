@@ -65,6 +65,8 @@ export default function CarCard({ car }: CarCardProps) {
       </div>
 
       <Link
+        target='_blank'
+        rel='noopener noreferrer'
         className='button mt-auto w-[244px] self-center'
         href={`/catalog/${car.id}`}
       >

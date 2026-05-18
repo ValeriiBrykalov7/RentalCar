@@ -45,6 +45,8 @@ export default function CatalogPage() {
     cars.length > 0 &&
     (Boolean(carsQuery.hasNextPage) || carsQuery.isFetchingNextPage) &&
     !isGridLoading;
+  const shouldAddGridBottomSpacing =
+    carsQuery.isSuccess && cars.length > 0 && !shouldShowLoadMore;
 
   const handleSearchSubmit = (nextFilters: CarsQueryParams) => {
     setFilters(nextFilters);
@@ -57,7 +59,11 @@ export default function CatalogPage() {
         <div className='container'>
           <SearchForm onSubmit={handleSearchSubmit} />
 
-          {!isGridLoading && cars.length > 0 && <CarsGrid cars={cars} />}
+          {!isGridLoading && cars.length > 0 && (
+            <div className={shouldAddGridBottomSpacing ? 'pb-[124px]' : ''}>
+              <CarsGrid cars={cars} />
+            </div>
+          )}
 
           {isGridLoading && (
             <div className='flex min-h-[320px] items-center justify-center'>

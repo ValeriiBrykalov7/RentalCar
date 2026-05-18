@@ -7,7 +7,7 @@ type CarsGridProps = {
 
 export default function CarsGrid({ cars }: CarsGridProps) {
   return (
-    <ul className='grid grid-cols-4 gap-x-[48px] gap-y-[32px]'>
+    <ul className='grid grid-cols-4 gap-x-[32px] gap-y-[48px]'>
       {cars.map((car) => (
         <li className='h-full' key={car.id}>
           <CarCard car={car} />

@@ -29,8 +29,8 @@ const selectStyles: StylesConfig<SelectOption, false> = {
   }),
   control: (base, state) => ({
     ...base,
-    minHeight: 48,
-    height: 48,
+    minHeight: 44,
+    height: 44,
     border: `1px solid ${
       state.isFocused ? 'var(--light-blue)' : 'transparent'
     }`,
@@ -46,7 +46,7 @@ const selectStyles: StylesConfig<SelectOption, false> = {
   }),
   valueContainer: (base) => ({
     ...base,
-    height: 48,
+    height: 44,
     padding: '0 0 0 18px',
   }),
   placeholder: (base) => ({
@@ -75,7 +75,7 @@ const selectStyles: StylesConfig<SelectOption, false> = {
   }),
   indicatorsContainer: (base) => ({
     ...base,
-    height: 48,
+    height: 44,
   }),
   dropdownIndicator: (base) => ({
     ...base,
@@ -122,10 +122,10 @@ const selectStyles: StylesConfig<SelectOption, false> = {
   }),
   option: (base, state) => ({
     ...base,
-    padding: '4px 18px',
     backgroundColor: state.isFocused ? 'var(--badges)' : 'var(--white)',
     color: state.isSelected ? 'var(--main)' : 'var(--gray)',
     fontFamily: 'var(--font-family)',
+    borderRadius: 999,
     fontSize: 16,
     fontWeight: 500,
     lineHeight: 1.25,

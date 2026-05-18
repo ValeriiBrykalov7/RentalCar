@@ -146,7 +146,7 @@ export default function SearchForm({ onSubmit }: SearchFormProps) {
             <legend className='mb-[8px] text-xs leading-[1.333] font-medium text-(--gray)'>
               Car mileage / km
             </legend>
-            <div className='flex h-[48px] overflow-hidden rounded-xl border border-transparent bg-(--white) transition-[border-color,box-shadow] duration-200 hover:border-(--light-blue) focus-within:border-(--light-blue) focus-within:shadow-[var(--shadow-focus)]'>
+            <div className='flex h-[44px] overflow-hidden rounded-xl border border-transparent bg-(--white) transition-[border-color,box-shadow] duration-200 hover:border-(--light-blue) focus-within:border-(--light-blue) focus-within:shadow-[var(--shadow-focus)]'>
               <Field
                 className='number-input h-full w-[160px] border-r border-(--gray-light) bg-transparent px-[24px] text-base leading-[1.25] font-medium text-(--main) outline-none placeholder:text-[color:var(--main)]'
                 name='minMileage'
@@ -172,7 +172,7 @@ export default function SearchForm({ onSubmit }: SearchFormProps) {
 
           <div className='relative flex flex-col items-center'>
             <button
-              className='button w-[156px]'
+              className='button w-[156px] h-[44px]'
               type='submit'
               disabled={isSubmitting}
             >
